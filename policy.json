@@ -1,0 +1,10 @@
+{
+  "soc2": {
+    "hash": "",
+    "description": "A brief description about what this policy is and what sorts of things it will fail for."
+  },
+  "nist": {
+    "hash": "",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae enim efficitur, tristique tellus sodales, elementum metus."
+  }
+}
