@@ -1,7 +1,9 @@
 package policy
 
 import data.phylum.level
+import future.keywords.contains
+import future.keywords.if
 
-issue["risk level cannot exceed medium"] {
-    data.issue.severity > level.MEDIUM
+issue contains "risk level cannot exceed medium" if {
+	data.issue.severity > level.MEDIUM
 }
