@@ -1,1 +1,1 @@
-Documentation can be found here: https://docs.phylum.io/docs/policy
+Documentation can be found here: <https://docs.phylum.io/knowledge_base/policy>
