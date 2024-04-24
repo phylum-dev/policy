@@ -12,15 +12,7 @@ import future.keywords.in
 # schemas:
 #   - data.issue: schema.issue
 
-# Returns a violation if there is code execution on pacakge install
+# Returns a violation if there is code execution on package install
 issue contains "Package contains code execution on install" if {
-   data.issue.tag == "IM0042"
-}
-
-issue contains "Package contains code execution on install" if {
-   data.issue.tag == "IM0043"
-}
-
-issue contains "Package contains code execution on install" if {
-   data.issue.tag == "IM0044"
+   data.issue.tag in {"IM0042", "IM0043", "IM0044"}
 }
