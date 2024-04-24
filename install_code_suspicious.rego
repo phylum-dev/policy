@@ -12,7 +12,8 @@ import future.keywords.in
 # schemas:
 #   - data.issue: schema.issue
 
-# Returns a violation if there is suspicious code execution on pacakge install
+# Returns a violation if there is suspicious code execution on package install
+
 issue contains "Package contains suspicious code execution on install" if {
    data.issue.tag == "CM0007"
 }
