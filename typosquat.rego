@@ -9,8 +9,8 @@ import future.keywords.if
 
 # Returns `true` if the given dependency has a typosquat issue
 has_typosquat {
-    issues := data.dependency.issues
-    count([tag | issues[i].tag == "HM0008"; tag := issues[i].tag]) == 1
+    some i
+    data.dependency.issues[i].tag == "HM0008"
 }
 
 # Returns `true` if the dependency has more than one malware issue
