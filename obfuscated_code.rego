@@ -6,28 +6,6 @@ import future.keywords.contains
 import future.keywords.if
 import future.keywords.in
 
-default obfuscated_code := false
-
-obfuscated_code if {
-	data.issue.tag =="HM0029"
-}
-
-obfuscated_code if {
-	data.issue.tag =="HM0099"
-}
-
-obfuscated_code if {
-	data.issue.tag =="HM0023"
-}
-
-obfuscated_code if {
-	data.issue.tag =="IM0040"
-}
-
-obfuscated_code if {
-	data.issue.tag =="IM0041"
-}
-
 # METADATA
 # scope: rule
 # schemas:
@@ -35,5 +13,5 @@ obfuscated_code if {
 
 # Returns a violation if the package contains obfuscated code
 issue contains "Package contains obfuscated code" if {
-   obfuscated_code
+   data.issue.tag in {"HM0029", "HM0099", "HM0023", "IM0040", "IM0041"}
 }
