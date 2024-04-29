@@ -2,9 +2,7 @@ package policy
 
 import data.phylum.domain
 import data.phylum.level
-import future.keywords.contains
-import future.keywords.if
-import future.keywords.in
+import rego.v1
 
 issue contains "risk level cannot exceed medium" if {
 	data.issue.domain in {domain.AUTHOR, domain.ENGINEERING, domain.VULNERABILITY}

@@ -1,5 +1,5 @@
 package policy
 
-import future.keywords.contains
+import rego.v1
 
 issue contains "Policy Violation"
