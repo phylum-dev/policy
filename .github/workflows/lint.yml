@@ -26,4 +26,4 @@ jobs:
 
       - name: Regal Lint
         if: ${{ !cancelled() }}
-        run: regal lint --format github ./policy
+        run: regal lint --format github .
