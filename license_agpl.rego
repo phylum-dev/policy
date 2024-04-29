@@ -1,25 +1,20 @@
 package policy
 
-import data.phylum.domain
-import data.phylum.level
-import future.keywords.contains
-import future.keywords.if
-import future.keywords.in
+import rego.v1
 
-is_agpl {
-regex.match("(?i)\\bAffero\\b", data.dependency.license)
+is_agpl if {
+	regex.match(`(?i)\bAffero\b`, data.dependency.license)
 }
 
-is_agpl {
-regex.match("(?i)\\bAGPL\\b", data.dependency.license)
+is_agpl if {
+	regex.match(`(?i)\bAGPL\b`, data.dependency.license)
 }
 
+# Returns a violation if the package license metadata indicates "Affero" or "AGPL"
 # METADATA
 # scope: rule
 # schemas:
 #   - data.issue: schema.issue
-
-# Returns a violation if the package license metadata indicates "Affero" or "AGPL"
 dependency contains "AGPL licensed software is not allowed" if {
-        is_agpl
+	is_agpl
 }

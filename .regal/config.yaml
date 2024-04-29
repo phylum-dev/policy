@@ -1,0 +1,16 @@
+capabilities:
+  from:
+    engine: opa
+    version: v0.61.0
+  minus:
+    builtins:
+      - name: http.send
+rules:
+  idiomatic:
+    no-defined-entrypoint:
+      level: ignore
+  imports:
+    unresolved-import:
+      level: error
+      except-imports:
+        - data.phylum.*
