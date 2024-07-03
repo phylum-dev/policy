@@ -1,5 +1,13 @@
-package policy
+# METADATA
+# title: Show All
+# description: |
+#    Returns a violation for all identified issues
+
+package policy.v1
 
 import rego.v1
 
-issue contains "Policy Violation"
+# Policy Violation
+deny contains issue if {
+   some issue in data.issues
+}
