@@ -1,12 +1,14 @@
-package policy
+# METADATA
+# title: Minimal Code
+# description: |
+#    Returns a violation if the package contains secrets/tokens excluding test/example files
+
+package policy.v1
 
 import rego.v1
 
-# Returns a violation if the package contains secrets/tokens excluding test/example files
-# METADATA
-# scope: rule
-# schemas:
-#   - data.issue: schema.issue
-issue contains "Secrets in non-test file" if {
-	data.issue.tag == "ME0016"
+# Secrets in non-test file
+deny contains issue if {
+   some issue in data.issues
+   issue.tag == "ME0016"
 }
