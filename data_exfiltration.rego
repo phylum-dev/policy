@@ -1,16 +1,20 @@
-package policy
+# METADATA
+# title: Data Exfiltration
+# description: |
+#    Returns a violation if the package contains common data exfiltration techniques
+
+package policy.v1
 
 import rego.v1
 
-# Returns a violation if the package contains common data exfiltration techniques
-# METADATA
-# scope: rule
-# schemas:
-#   - data.issue: schema.issue
-issue contains "Package contains environment variable enumeration" if {
-	data.issue.tag == "HM0025"
+# Package contains environment variable enumeration
+deny contains issue if {
+   some issue in data.issues
+   issue.tag == "HM0025"
 }
 
-issue contains "Package contains webhook exfiltration" if {
-	data.issue.tag == "HM0036"
+# Package contains webhook exfiltration
+deny contains issue if {
+   some issue in data.issues
+   issue.tag == "HM0036"
 }
