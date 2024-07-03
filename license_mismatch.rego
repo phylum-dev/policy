@@ -1,12 +1,14 @@
-package policy
+# METADATA
+# title: License Mismatch
+# description: |
+#    Returns a violation if there is a license mismatch between metadata and files
+
+package policy.v1
 
 import rego.v1
 
-# Returns a violation if there is a license mismatch between metadata and files
-# METADATA
-# scope: rule
-# schemas:
-#   - data.issue: schema.issue
-issue contains "License mismatch" if {
-	data.issue.tag == "IL0022"
+# License mismatch
+deny contains issue if {
+   some issue in data.issues
+   issue.tag == "IL0022"
 }
