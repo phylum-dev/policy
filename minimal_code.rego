@@ -1,12 +1,14 @@
-package policy
+# METADATA
+# title: Minimal Code
+# description: |
+#    Returns a violation if the package contains minimal code and is unlikley worth the security risk
+
+package policy.v1
 
 import rego.v1
 
-# Returns a violation if the package contains minimal code and is unlikley worth the security risk
-# METADATA
-# scope: rule
-# schemas:
-#   - data.issue: schema.issue
-issue contains "Package contains minimal code" if {
-	data.issue.tag == "IE0027"
+# Package contains minimal code
+deny contains issue if {
+   some issue in data.issues
+   issue.tag == "IE0027"
 }
