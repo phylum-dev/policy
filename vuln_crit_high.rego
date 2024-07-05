@@ -1,15 +1,17 @@
-package policy
+# METADATA
+# title: Critical/High Software Vulnerability
+# description: |
+#    Returns a violation if the package has a Critical or High software vulnerability
 
+package policy.v1
+
+import rego.v1
 import data.phylum.domain
 import data.phylum.level
-import rego.v1
 
-# Returns a violation if the package has a Critical or High software vulnerability
-# METADATA
-# scope: rule
-# schemas:
-#   - data.issue: schema.issue
-issue contains "Critical or High software vulnerability" if {
-	data.issue.domain == domain.VULNERABILITY
-	data.issue.severity > level.MEDIUM
+# Critical or High software vulnerability
+deny contains issue if {
+   some issue in data.issues
+   issue.domain == domain.VULNERABILITY
+   issue.severity > level.MEDIUM
 }
