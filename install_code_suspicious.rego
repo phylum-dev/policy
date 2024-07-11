@@ -2,7 +2,6 @@
 # title: Install Code Execution (Suspicious)
 # description: |
 #    Returns a violation if there is suspicious code execution on pacakge install
-
 package policy.v1
 
 import rego.v1

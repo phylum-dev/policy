@@ -2,7 +2,6 @@
 # title: Obfuscated Code
 # description: |
 #    Returns a violation if the package contains obfuscated code
-
 package policy.v1
 
 import rego.v1

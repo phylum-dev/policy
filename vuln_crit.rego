@@ -2,7 +2,6 @@
 # title: Critical Software Vulnerability
 # description: |
 #    Returns a violation if the package has a Critical software vulnerability
-
 package policy.v1
 
 import data.phylum.domain

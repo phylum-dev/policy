@@ -2,7 +2,6 @@
 # title: Runs Remote Code
 # description: |
 #    Returns a violation if the package runs remote code
-
 package policy.v1
 
 import rego.v1

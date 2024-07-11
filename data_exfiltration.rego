@@ -2,7 +2,6 @@
 # title: Data Exfiltration
 # description: |
 #    Returns a violation if the package contains common data exfiltration techniques
-
 package policy.v1
 
 import rego.v1

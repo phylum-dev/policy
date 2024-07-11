@@ -2,7 +2,6 @@
 # title: Typosquat
 # description: |
 #    Returns a violation if the package contains a potential typosquat with malicious characteristics
-
 package policy.v1
 
 import data.phylum.domain

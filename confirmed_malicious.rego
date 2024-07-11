@@ -2,7 +2,6 @@
 # title: Confirmed Malicious
 # description: |
 #   Return a violation if the pacakge or author is tied to known malicious behavior
-
 package policy.v1
 
 import rego.v1

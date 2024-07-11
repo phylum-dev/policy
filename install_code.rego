@@ -2,7 +2,6 @@
 # title: Install Code Execution
 # description: |
 #    Returns a violation if there is code execution on package install
-
 package policy.v1
 
 import rego.v1
