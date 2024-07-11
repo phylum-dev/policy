@@ -14,5 +14,6 @@ deny contains typosquat_issue if {
 	some typosquat_issue in dependency.issues
 	typosquat_issue.tag == "HM0008"
 
+	some i
 	count([d | dependency.issues[i].domain == domain.MALICIOUS; d := dependency.issues[i].domain]) > 1
 }
