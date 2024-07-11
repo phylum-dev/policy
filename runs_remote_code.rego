@@ -9,6 +9,6 @@ import rego.v1
 
 # Runs remote code
 deny contains issue if {
-   some issue in data.issues
-   issue.tag in {"CM0024", "MM0024", "HM0032"}
+	some issue in data.issues
+	issue.tag in {"CM0024", "MM0024", "HM0032"}
 }

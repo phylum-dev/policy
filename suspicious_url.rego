@@ -9,6 +9,6 @@ import rego.v1
 
 # Suspicious URL reference
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "MM0028"
+	some issue in data.issues
+	issue.tag == "MM0028"
 }

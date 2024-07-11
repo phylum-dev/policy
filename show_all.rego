@@ -9,5 +9,5 @@ import rego.v1
 
 # Policy Violation
 deny contains issue if {
-   some issue in data.issues
+	some issue in data.issues
 }

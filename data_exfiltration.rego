@@ -9,12 +9,12 @@ import rego.v1
 
 # Package contains environment variable enumeration
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "HM0025"
+	some issue in data.issues
+	issue.tag == "HM0025"
 }
 
 # Package contains webhook exfiltration
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "HM0036"
+	some issue in data.issues
+	issue.tag == "HM0036"
 }

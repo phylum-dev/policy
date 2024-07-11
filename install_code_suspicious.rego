@@ -9,12 +9,12 @@ import rego.v1
 
 # Package contains suspicious code execution on install
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "CM0007"
+	some issue in data.issues
+	issue.tag == "CM0007"
 }
 
 # Package contains suspicious code execution on install
 deny contains issue if {
-   some issue in data.issues
-   endswith(issue.tag, "M0031")
+	some issue in data.issues
+	endswith(issue.tag, "M0031")
 }

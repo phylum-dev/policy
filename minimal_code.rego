@@ -9,6 +9,6 @@ import rego.v1
 
 # Package contains minimal code
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "IE0027"
+	some issue in data.issues
+	issue.tag == "IE0027"
 }

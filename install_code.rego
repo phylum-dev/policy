@@ -9,6 +9,6 @@ import rego.v1
 
 # Package contains code execution on install
 deny contains issue if {
-   some issue in data.issues
-   issue.tag in {"IM0042", "IM0043", "IM0044"}
+	some issue in data.issues
+	issue.tag in {"IM0042", "IM0043", "IM0044"}
 }

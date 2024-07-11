@@ -9,6 +9,6 @@ import rego.v1
 
 # Secrets in non-test file
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "ME0016"
+	some issue in data.issues
+	issue.tag == "ME0016"
 }

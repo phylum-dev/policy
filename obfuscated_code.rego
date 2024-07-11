@@ -9,6 +9,6 @@ import rego.v1
 
 # Package contains obfuscated code
 deny contains issue if {
-   some issue in data.issues
-   issue.tag in {"HM0029", "HM0099", "HM0023", "IM0040", "IM0041"}
+	some issue in data.issues
+	issue.tag in {"HM0029", "HM0099", "HM0023", "IM0040", "IM0041"}
 }

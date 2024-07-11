@@ -9,6 +9,6 @@ import rego.v1
 
 # License mismatch
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "IL0022"
+	some issue in data.issues
+	issue.tag == "IL0022"
 }

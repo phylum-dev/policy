@@ -9,6 +9,6 @@ import rego.v1
 
 # Package contains environment variable enumeration
 deny contains issue if {
-   some issue in data.issues
-   issue.tag == "HM0018"
+	some issue in data.issues
+	issue.tag == "HM0018"
 }

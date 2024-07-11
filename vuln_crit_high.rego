@@ -5,13 +5,13 @@
 
 package policy.v1
 
-import rego.v1
 import data.phylum.domain
 import data.phylum.level
+import rego.v1
 
 # Critical or High software vulnerability
 deny contains issue if {
-   some issue in data.issues
-   issue.domain == domain.VULNERABILITY
-   issue.severity > level.MEDIUM
+	some issue in data.issues
+	issue.domain == domain.VULNERABILITY
+	issue.severity > level.MEDIUM
 }
