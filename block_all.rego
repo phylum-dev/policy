@@ -1,14 +1,13 @@
 # METADATA
-# title: Minimal Code
+# title: Block All Issues
 # description: |
-#    Blocks packages containing minimal code
+#    Blocks all identified issues
 package policy.v1
 
 import rego.v1
 
 # METADATA
-# title: Minimal code
+# title: Policy Violation
 deny contains issue if {
 	some issue in data.issues
-	issue.tag == "IE0027"
 }

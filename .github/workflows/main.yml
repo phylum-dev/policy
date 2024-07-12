@@ -21,7 +21,7 @@ jobs:
 
       - name: OPA Check
         if: ${{ !cancelled() }}
-        run: opa check --strict --max-errors 0 .
+        run: find . -maxdepth 1 -type f -name '*.rego' -print0 | xargs -0L1 opa check --strict --max-errors 0
 
       - name: Regal Lint
         if: ${{ !cancelled() }}
