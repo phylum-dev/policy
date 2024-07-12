@@ -1,12 +1,14 @@
-package policy
+# METADATA
+# title: Secrets in non-test files
+# description: |
+#    Blocks packages containing secrets/tokens in non-test files
+package policy.v1
 
 import rego.v1
 
-# Returns a violation if the package contains secrets/tokens excluding test/example files
 # METADATA
-# scope: rule
-# schemas:
-#   - data.issue: schema.issue
-issue contains "Secrets in non-test file" if {
-	data.issue.tag == "ME0016"
+# title: Secrets in non-test file
+deny contains issue if {
+	some issue in data.issues
+	issue.tag == "ME0016"
 }
