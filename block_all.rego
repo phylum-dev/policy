@@ -1,12 +1,13 @@
 # METADATA
-# title: Show All
+# title: Block All Issues
 # description: |
-#    Returns a violation for all identified issues
+#    Blocks all identified issues
 package policy.v1
 
 import rego.v1
 
-# Policy Violation
+# METADATA
+# title: Policy Violation
 deny contains issue if {
 	some issue in data.issues
 }

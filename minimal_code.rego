@@ -1,12 +1,13 @@
 # METADATA
 # title: Minimal Code
 # description: |
-#    Returns a violation if the package contains minimal code and is unlikley worth the security risk
+#    Blocks packages containing minimal code
 package policy.v1
 
 import rego.v1
 
-# Package contains minimal code
+# METADATA
+# title: Minimal code
 deny contains issue if {
 	some issue in data.issues
 	issue.tag == "IE0027"

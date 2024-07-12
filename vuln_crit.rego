@@ -1,14 +1,15 @@
 # METADATA
-# title: Critical Software Vulnerability
+# title: Software Vulnerability - Critical
 # description: |
-#    Returns a violation if the package has a Critical software vulnerability
+#    Blocks Critical software vulnerabilities
 package policy.v1
 
 import data.phylum.domain
 import data.phylum.level
 import rego.v1
 
-# Critical software vulnerability
+# METADATA
+# title: Critical software vulnerability
 deny contains issue if {
 	some issue in data.issues
 	issue.domain == domain.VULNERABILITY
