@@ -1,3 +1,7 @@
+# METADATA
+# title: Per Domain 
+# description: |
+#    Block medium/high/critical author/engineering/vulnerability issues, any medium/high/critical malware issues and any high/critical license issues
 package policy
 
 import data.phylum.domain

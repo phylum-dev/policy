@@ -1,3 +1,8 @@
+# METADATA
+# title: All High, Critical Issues 
+# description: |
+#    Blocks all issues that exceed the medium threshold 
+
 package policy
 
 import data.phylum.level

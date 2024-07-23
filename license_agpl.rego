@@ -1,3 +1,8 @@
+# METADATA
+# title: AGPL Licenses 
+# description: |
+#    Block any packages that use AGPL licenses 
+
 package policy
 
 import rego.v1
