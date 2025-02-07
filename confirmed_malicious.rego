@@ -17,7 +17,7 @@ deny contains issue if {
 # title: Verified malware
 deny contains issue if {
 	some issue in data.issues
-	issue.tag == "CM0037"
+	issue.tag in {"CM0037", "CM1002"}
 }
 
 # METADATA
