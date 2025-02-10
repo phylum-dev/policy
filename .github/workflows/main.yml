@@ -6,6 +6,8 @@ jobs:
   lint:
     name: Lint policies
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +32,8 @@ jobs:
   deploy:
     name: Deploy policies
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     needs: lint
     if: success() && github.ref == 'refs/heads/main'
 
