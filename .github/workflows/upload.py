@@ -16,7 +16,7 @@ import uuid
 GROUP_NAME = None
 token = os.environ["PHYLUM_TOKEN"]
 version = os.environ.get("GITHUB_SHA", None)
-BASE_ADDRESS = "https://api.staging.phylum.io/api/"
+BASE_ADDRESS = "https://api.phylum.io/api/"
 
 # Build a multipart form body.
 boundary = uuid.uuid4().hex
