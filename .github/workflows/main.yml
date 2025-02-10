@@ -1,12 +1,13 @@
-name: Lint policies
-
 on:
   push:
   workflow_dispatch:
 
 jobs:
   lint:
+    name: Lint policies
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -27,3 +28,19 @@ jobs:
       - name: Regal Lint
         if: ${{ !cancelled() }}
         run: regal lint --format github .
+
+  deploy:
+    name: Deploy policies
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    needs: lint
+    if: success() && github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload
+        env:
+          PHYLUM_TOKEN: ${{ secrets.PHYLUM_POLICY_TOKEN }}
+        run: python3 .github/workflows/upload.py
