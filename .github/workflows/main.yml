@@ -42,5 +42,5 @@ jobs:
 
       - name: Upload
         env:
-          PHYLUM_TOKEN: ${{ secrets.PHYLUM_TOKEN }}
+          PHYLUM_TOKEN: ${{ secrets.PHYLUM_POLICY_TOKEN }}
         run: python3 .github/workflows/upload.py
