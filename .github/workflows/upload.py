@@ -2,6 +2,7 @@
 Script to upload a set of policy files to Phylum.
 """
 
+import contextlib
 import io
 import json
 import os
@@ -11,6 +12,7 @@ from urllib.error import HTTPError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 import uuid
+import sys
 
 # Set the group name if you are uploading policies for a group.
 GROUP_NAME = None
@@ -64,11 +66,9 @@ try:
         pass
 except HTTPError as error:
     response = error.read().decode("utf8", errors="replace")
-    try:
+    with contextlib.suppress(json.JSONDecodeError):
         # Phylum's API returns JSON error descriptions.
         # If that's what we got, reformat it to be more readable.
         response = json.dumps(json.loads(response), indent=2)
-    except json.JSONDecodeError:
-        pass
     print(response)
-    exit(1)
+    sys.exit(1)
