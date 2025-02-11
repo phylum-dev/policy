@@ -17,14 +17,14 @@ deny contains issue if {
 # title: Verified malware
 deny contains issue if {
 	some issue in data.issues
-	issue.tag == "CM0037"
+	issue.tag in {"CM0038", "CM1002"}
 }
 
 # METADATA
 # title: Known-bad compiled binary
 deny contains issue if {
 	some issue in data.issues
-	issue.tag == "CM0038"
+	issue.tag == "CM0037"
 }
 
 # METADATA
